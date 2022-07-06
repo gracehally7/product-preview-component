@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 *{
     padding: 0;
@@ -6,10 +5,6 @@
     box-sizing: border-box;
 }  
 
-@media screen {
-    width:  Mobile 375px
-    Desktop: 1440px;
-}
 body{
     background: hsl(38, 22%, 93%);
     height: 100vh;
@@ -22,11 +17,11 @@ main{
     width: 40%;
     height: 70vh;
     display: flex;
-    margin: auto;
-    background-color: white;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
+    position: absolute;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
 }
 .leftobject{
@@ -61,7 +56,7 @@ p{
     font-size: 14px;
     color: hsl(228, 12%, 48%);
     font-weight: lighter;
-    font-family:"Montserrat",(https://fonts.google.com/specimen/Montserrat) ;
+    font-family:"Montserrat",sans-serif) ;
 }
 #h{
     display: flex;
@@ -70,12 +65,12 @@ p{
     color: hsl(158, 59%, 40%);
     font-weight: 700;
     font-size: 25px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Fraunces",sans-serif;
 }
 #h span{
     color: hsl(222, 12%, 48%);
     text-decoration: line-through;
-    font-size: 12px;
+    font-size: 10px;
     padding-left: 20px;
 }
 #cart{
@@ -88,18 +83,19 @@ p{
     color: white;
     text-emphasis-color: white;
 }
-@media (max-width:768px){
+@media ${device.mobile} { 
+    max-width: 375px;
     main{
+        display:grid
         flex-direction: column;
     }
-    .leftobject{
-        background: #fff;
-    }
-    img{
-        border-radius: 10px 10px 0 0;
-    }
-    .rightobject{
-        border-radius: 0 0 10px 10px;
-    }
-
+    .leftobject > img{
+        background: url(C:\Users\HP\Documents\WEBSITE\product-preview\images\image-product-mobile.jpg)/center/cover;
+       
 }
+  }
+
+  @media ${device.desktop} {
+    max-width: 1400px;
+  }
+   
